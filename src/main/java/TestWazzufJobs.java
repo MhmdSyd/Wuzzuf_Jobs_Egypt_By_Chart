@@ -14,7 +14,7 @@ public class TestWazzufJobs {
         System.out.println("============Start to read CSV file============");
         System.out.println();
 
-        List<JobDetails> jobDetailsList = file.readWazzufJobsFromCSV("I:\\ITI\\month I\\java\\Assignment\\Wazzuf_Egypt_Jobs\\resource\\Wuzzuf_Jobs.csv");
+        List<JobDetails> jobDetailsList = file.readWazzufJobsFromCSV("src\\main\\resources\\Wuzzuf_Jobs.csv");
         System.out.println("============Finish to read Wazzuf _Jobs file and create list of job row============");
         System.out.println();
 
