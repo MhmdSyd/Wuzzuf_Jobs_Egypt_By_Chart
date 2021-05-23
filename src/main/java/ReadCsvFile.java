@@ -32,7 +32,7 @@ public class ReadCsvFile {
                         line_new = line_new + line.charAt(i);
 
                     }else if((Character.compare(line.charAt(i), ',') == 0) && (number_of_dcotes%2 == 1)){
-                        line_new = line_new + "-";
+                        line_new = line_new + ";";
 
                     }else{
                         line_new = line_new + line.charAt(i);
@@ -53,14 +53,14 @@ public class ReadCsvFile {
 
     public JobDetails createJobDetails(String[] metadata) {
 
-        String title = metadata[0];
-        String company = metadata[1];
+        String title = metadata[0].replaceAll(";",",");
+        String company = metadata[1].replaceAll(";",",");
         String location = metadata[2];
         String type = metadata[3];
         String level = metadata[4];
         String year = metadata[5];
         String country = metadata[6];
-        String skills = metadata[7];
+        String skills = metadata[7].replaceAll(";",",");
 
 
         // create and return Pyramid of this metadata
