@@ -57,7 +57,7 @@ public class TestWazzufJobs {
         System.out.println("=====================Display Chart==========================");
         //create chart object.
         XChart chat = new XChart();
-        chat.createChart(filterJob.filterJobsByLevel(jobDetailsList),"filterJobsByYearsExp",20);
+        chat.createChart(filterJob.filterJobsByLevel(jobDetailsList),"filterJobsByYearsExp",10);
 
     }
 }

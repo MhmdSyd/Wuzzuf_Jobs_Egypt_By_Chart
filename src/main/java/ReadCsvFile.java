@@ -19,8 +19,28 @@ public class ReadCsvFile {
             if (line != null) {
                 line = br.readLine(); // the first real data
             }
+
+
             while (line != null) {
-                String[] attributes = line.split(",");
+
+
+                String line_new="";
+                int number_of_dcotes = 0;
+                for(int i=0; i<line.length();i++){
+                    if(Character.compare(line.charAt(i), '\"') == 0){
+                        number_of_dcotes++;
+                        line_new = line_new + line.charAt(i);
+
+                    }else if((Character.compare(line.charAt(i), ',') == 0) && (number_of_dcotes%2 == 1)){
+                        line_new = line_new + "-";
+
+                    }else{
+                        line_new = line_new + line.charAt(i);
+                    }
+                }
+
+
+                String[] attributes = line_new.split(",");
                 JobDetails pyr = createJobDetails(attributes);
                 allJob.add(pyr);
                 line = br.readLine();
